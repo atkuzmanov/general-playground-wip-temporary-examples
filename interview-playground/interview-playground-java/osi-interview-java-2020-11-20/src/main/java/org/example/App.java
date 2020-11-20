@@ -37,18 +37,8 @@ public class App {
 
     public static boolean hasPathSum(TreeNode node, int sum) {
         if (node == null) {
-//            return false;
             return sum == 0;
         }
-
-//        if (node.right == null && node.left == null && sum == 0) {
-//            return true;
-//        } else if (node.right == null && node.left == null && sum < 0) {
-//            return false;
-//        }
-
-//        sum -= node.data;
-//        return hasPathSum(node.leftChild, sum-=node.data) || hasPathSum(node.rightChild, sum-=node.data);
         return hasPathSum(node.left, sum - node.data) || hasPathSum(node.right, sum - node.data);
     }
 
